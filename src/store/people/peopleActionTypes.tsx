@@ -1,0 +1,2 @@
+export const GET_CREDITS = "GET_CREDITS";
+export const GET_CREDITS_SUCCESS = "GET_CREDITS_SUCCESS";

@@ -1,0 +1,13 @@
+.Header {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  column-gap: 1rem;
+}
+h1, li {
+    cursor: pointer;
+}

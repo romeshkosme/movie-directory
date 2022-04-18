@@ -1,0 +1,22 @@
+.List {
+    margin: 1rem 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 100%;
+}
+
+.List__content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.List__scroll__arrow {
+    cursor: pointer;
+}
+.List__scroll__content {
+    display: flex;
+    overflow-x: hidden;
+    height: 30rem;
+    column-gap: 2rem;
+}
