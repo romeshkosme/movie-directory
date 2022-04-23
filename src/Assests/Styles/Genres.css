@@ -1,0 +1,10 @@
+.genres_list {
+    display: flex;
+    column-gap: 10px;
+}
+.genres_item {
+    cursor: pointer;
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    border-radius: 50px;
+}

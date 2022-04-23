@@ -1,15 +1,14 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import "../Assests/Styles/Series.css";
+import "../Assests/Styles/Card.css";
 
-function SeriesCard(props: any) {
+function Card(props: any) {
   return (
-    <Link to={`/series/${props.id}`}>
-      <div className="series__card">
+    <Link to={`/${props.type}/${props.id}`}>
+      <div className="card">
         <div
           key={props.id}
-          className="series__card__img"
+          className="card__img"
           style={{
             backgroundImage: `url(${props.imgUrl}${props.posterSize[4]}${props.poster_path})`,
             backgroundRepeat: "no-repeat",
@@ -17,8 +16,8 @@ function SeriesCard(props: any) {
             borderRadius: "8px",
           }}
         >
-          <div className="series__card__content">
-            <h3>{props.original_name}</h3>
+          <div className="card__content">
+            <h3>{props.title}</h3>
             <p>
               <small>{props.overview}</small>
             </p>
@@ -29,8 +28,4 @@ function SeriesCard(props: any) {
   );
 }
 
-const mapStateToProps = (state: any) => ({
-  imgUrl: state.configuration.imageUrl,
-  posterSize: state.configuration.posterSize,
-});
-export default connect(mapStateToProps, {})(SeriesCard);
+export default Card;

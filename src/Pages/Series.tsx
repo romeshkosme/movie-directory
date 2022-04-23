@@ -1,14 +1,29 @@
-import React from 'react'
-import "../Assests/Styles/Series.css"
-import underConstruction from "../Assests/Static/underConstruction.svg"
+import React, { useEffect } from "react";
+import "../Assests/Styles/Series.css";
+import SeriesList from "../components/SeriesList";
+import { connect } from "react-redux";
+import {
+  getPopularSeries,
+  getTopRatedSeries,
+} from "../store/series/seriesAction";
 
-function Series() {
+function Series(props: any) {
+  useEffect(() => {
+    props.getPopularSeries();
+    props.getTopRatedSeries();
+  }, []);
   return (
-    <div className='series'>
-      <img src={underConstruction} alt="" width={'50%'}/>
-      <h1>Under Construction</h1>
+    <div className="series">
+      <SeriesList title="Popular Series" list={props.series.popularSeries} />
+      <SeriesList title="Top Rated Series" list={props.series.topRatedSeries} />
     </div>
-  )
+  );
 }
 
-export default Series
+const mapStateToProps = (state: any) => ({
+  series: state.series,
+});
+export default connect(mapStateToProps, {
+  getPopularSeries,
+  getTopRatedSeries,
+})(Series);

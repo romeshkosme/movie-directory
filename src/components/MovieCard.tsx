@@ -7,6 +7,7 @@ interface IMovieCardProps {
   imgUrl: string;
   posterSize: Array<string>;
   id: number;
+  type: string;
   poster_path: string;
   original_title: string;
   overview: string;
@@ -16,7 +17,7 @@ interface IMovieCardProps {
 }
 function MovieCard(props: IMovieCardProps): any {
   return (
-    <Link to={`/movie/${props.id}`}>
+    <Link to={`/${props.type}/${props.id}`}>
     <div className="MovieCard">
       <div
         key={props.id}

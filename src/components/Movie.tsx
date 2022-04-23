@@ -16,7 +16,7 @@ import {
   useParams,
 } from "react-router-dom";
 import "../Assests/Styles/Movie.css";
-import List from "./List";
+import MovieList from "./MovieList";
 import ReviewList from "./ReviewList";
 import CastList from "./CastList";
 
@@ -35,7 +35,7 @@ function Movie(props: any) {
     return () => {
       console.log("reset");
       props.reset();
-    }
+    };
   }, []);
   useEffect(() => {
     // setHeroCss({
@@ -103,10 +103,10 @@ function Movie(props: any) {
           <ReviewList reviews={props.movie.reviews} />
         </div>
         <div className="movie_recommendations">
-          <List title="Recommended" list={props.movie.recommendations}></List>
+          <MovieList title="Recommended" list={props.movie.recommendations} />
         </div>
         <div className="movie_similar">
-          <List title="Similar" list={props.movie.similarMovies}></List>
+          <MovieList title="Similar" list={props.movie.similarMovies} />
         </div>
       </div>
     </div>

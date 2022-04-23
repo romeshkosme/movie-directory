@@ -1,13 +1,18 @@
-import React from "react";
-import "../Assests/Styles/Movies.css"
-import List from "../components/List";
+import React, { useEffect } from "react";
+import "../Assests/Styles/Movies.css";
 import { connect } from "react-redux";
-import { getPopularMovie } from "../store/movie/movieAction";
+import { getPopularMovie, getTopRatedMovie } from "../store/movie/movieAction";
+import MovieList from "../components/MovieList";
 
 function Movies(props: any) {
+  useEffect(() => {
+    props.getPopularMovie();
+    props.getTopRatedMovie();
+  }, []);
   return (
     <div className="movies">
-      <List title="Popular Movies" list={props.movie.popularMovies} />
+      <MovieList title="Popular Movies" list={props.movie.popularMovies} />
+      <MovieList title="Top Rated Movies" list={props.movie.topRatedMovies} />
     </div>
   );
 }
@@ -15,4 +20,6 @@ function Movies(props: any) {
 const mapStateToProps = (state: any) => ({
   movie: state.movie,
 });
-export default connect(mapStateToProps, { getPopularMovie })(Movies);
+export default connect(mapStateToProps, { getPopularMovie, getTopRatedMovie })(
+  Movies
+);

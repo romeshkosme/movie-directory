@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CastCard from "./CastCard";
 import { connect } from "react-redux";
 import "../Assests/Styles/CastList.css";
 
 function CastList(props: any) {
   const [castLimit, setCastLimit] = useState(7)
+  useEffect(() => {
+    console.log("CastList", props);
+  }, []);
   return (
     <div className="cast_list">
       <div className="cast_list_header">
