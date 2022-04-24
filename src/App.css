@@ -13,3 +13,11 @@
 a {
   text-decoration: none;
 }
+
+.d-none {
+  visibility: hidden;
+}
+
+.d-block {
+  visibility: visible;
+}
