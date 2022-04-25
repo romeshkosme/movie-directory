@@ -1,2 +1,14 @@
-export const GET_CREDITS = "GET_CREDITS";
-export const GET_CREDITS_SUCCESS = "GET_CREDITS_SUCCESS";
+export const GET_DETAILS: string = "GET_DETAILS";
+export const GET_DETAILS_SUCCESS: string = "GET_DETAILS_SUCCESS";
+export const GET_MOVIE_CREDITS: string = "GET_MOVIE_CREDITS";
+export const GET_MOVIE_CREDITS_SUCCESS: string = "GET_MOVIE_CREDITS_SUCCESS";
+export const GET_TV_CREDITS: string = "GET_TV_CREDITS";
+export const GET_TV_CREDITS_SUCCESS: string = "GET_TV_CREDITS_SUCCESS";
+export const GET_EXTERNAL_IDS: string = "GET_EXTERNAL_IDS";
+export const GET_EXTERNAL_IDS_SUCCESS: string = "GET_EXTERNAL_IDS_SUCCESS";
+export const GET_IMAGES: string = "GET_IMAGES";
+export const GET_IMAGES_SUCCESS: string = "GET_IMAGES_SUCCESS";
+export const GET_TAGGED_IMAGES: string = "GET_TAGGED_IMAGES";
+export const GET_TAGGED_IMAGES_SUCCESS: string = "GET_TAGGED_IMAGES_SUCCESS";
+export const GET_POPULAR_PEOPLE: string = "GET_POPULAR_PEOPLE";
+export const GET_POPULAR_PEOPLE_SUCCESS: string = "GET_POPULAR_PEOPLE_SUCCESS";

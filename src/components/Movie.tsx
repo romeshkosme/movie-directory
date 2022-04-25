@@ -10,7 +10,7 @@ import {
   getWatchProviders,
   reset,
 } from "../store/movie/movieAction";
-import { getCredits } from "../store/people/peopleAction";
+import { getCredits } from "../store/movie/movieAction";
 import {
   // Link,
   useParams,

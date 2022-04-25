@@ -18,6 +18,8 @@ import {
   GET_VIDEOS_SUCCESS,
   GET_WATCH_PROVIDERS,
   GET_WATCH_PROVIDERS_SUCCESS,
+  GET_CREDITS,
+  GET_CREDITS_SUCCESS,
 } from "./movieActionTypes";
 
 export const reset = () => ({
@@ -111,5 +113,15 @@ export const getWatchProviders = (payload: any) => ({
 
 export const getWatchProvidersSuccess = (payload: any) => ({
   type: GET_WATCH_PROVIDERS_SUCCESS,
+  payload,
+});
+
+export const getCredits = (payload: any) => ({
+  type: GET_CREDITS,
+  payload,
+});
+
+export const getCreditsSuccess = (payload: any) => ({
+  type: GET_CREDITS_SUCCESS,
   payload,
 });

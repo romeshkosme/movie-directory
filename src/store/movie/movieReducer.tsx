@@ -18,6 +18,8 @@ import {
   GET_VIDEOS_SUCCESS,
   GET_WATCH_PROVIDERS,
   GET_WATCH_PROVIDERS_SUCCESS,
+  GET_CREDITS,
+  GET_CREDITS_SUCCESS,
 } from "./movieActionTypes";
 
 export interface InitialValue {
@@ -30,6 +32,8 @@ export interface InitialValue {
   reviews: Array<any>;
   videos: Array<any>;
   watchProviders: Array<any>;
+  cast: Array<any>;
+  crew: Array<any>;
 }
 
 const initialValue: InitialValue = {
@@ -42,6 +46,8 @@ const initialValue: InitialValue = {
   reviews: [],
   videos: [],
   watchProviders: [],
+  cast: [],
+  crew: [],
 };
 
 export default function movieReducer(state = initialValue, action: any) {
@@ -128,6 +134,18 @@ export default function movieReducer(state = initialValue, action: any) {
       return {
         ...state,
         watchProviders: action.payload.results,
+      };
+    case GET_CREDITS:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case GET_CREDITS_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        cast: action.payload.cast,
+        crew: action.payload.crew,
       };
     default:
       return state;

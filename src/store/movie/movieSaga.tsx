@@ -10,6 +10,7 @@ import {
   GET_VIDEOS,
   GET_WATCH_PROVIDERS,
   GET_TOP_RATED_MOVIE,
+  GET_CREDITS,
 } from "./movieActionTypes";
 import {
   getPopularMovieSuccess,
@@ -21,6 +22,7 @@ import {
   getVideosSuccess,
   getWatchProvidersSuccess,
   getTopRatedMovieSuccess,
+  getCreditsSuccess,
 } from "./movieAction";
 
 function* getPopularMovie({ payload }: any): any {
@@ -159,6 +161,21 @@ function* getTopRatedMovies(): any {
   }
 }
 
+function* getCredits({ payload }: any): any {
+  try {
+    const response = yield axios({
+      method: "get",
+      url: `${process.env.REACT_APP_API_URL_V3}/movie/${payload}/credits?api_key=${process.env.REACT_APP_API_KEY_V3}&language=en-US&page=1`,
+    });
+    if (response) {
+      yield put(getCreditsSuccess(response.data));
+    }
+  } catch (error) {
+    console.log(error);
+    // yield put();
+  }
+}
+
 export function* watchGetPopularMovie() {
   yield takeEvery(GET_POPULAR_MOVIE, getPopularMovie);
 }
@@ -195,6 +212,10 @@ export function* watchGetTopRatedMovie() {
   yield takeEvery(GET_TOP_RATED_MOVIE, getTopRatedMovies);
 }
 
+export function* watchGetCredits() {
+  yield takeEvery(GET_CREDITS, getCredits);
+}
+
 function* MovieSaga() {
   yield all([
     fork(watchGetPopularMovie),
@@ -206,6 +227,7 @@ function* MovieSaga() {
     fork(watchGetVideos),
     fork(watchGetWatchProviders),
     fork(watchGetTopRatedMovie),
+    fork(watchGetCredits),
   ]);
 }
 

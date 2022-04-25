@@ -1,14 +1,29 @@
-import React from "react";
-import "../Assests/Styles/People.css"
-import underConstruction from "../Assests/Static/underConstruction.svg"
+import React, { useEffect } from "react";
+import "../Assests/Styles/People.css";
+import { connect } from "react-redux";
+import { getPopularPeople } from "../store/people/peopleAction";
+import PeopleList from "../components/PeopleList";
 
-function People() {
+function People(props: any) {
+  useEffect(() => {
+    props.getPopularPeople();
+  }, []);
+
   return (
     <div className="people">
-      <img src={underConstruction} alt="" width={"50%"} />
-      <h1>Under Construction</h1>
+      <div className="people__content">
+        <PeopleList
+          title={"Popular Celebs"}
+          list={props.people.popularPeople}
+          configuration={props.configuration}
+        />
+      </div>
     </div>
   );
 }
 
-export default People;
+const mapStateToProps = (state: any) => ({
+  people: state.people,
+  configuration: state.configuration,
+});
+export default connect(mapStateToProps, { getPopularPeople })(People);
