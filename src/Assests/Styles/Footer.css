@@ -1,4 +1,8 @@
 .Footer {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 30px;
+}
+
+.Footer a {
+  text-decoration: underline;
 }

@@ -1,5 +1,4 @@
 .movie {
-  /* padding: 2rem 10rem; */
   display: flex;
   flex-direction: column;
   row-gap: 2rem; 
@@ -9,51 +8,26 @@
 }
 .movie_hero_content {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   column-gap: 15px;
 }
-.movie_poster {
-  flex: 0.4;
-}
 .movie_info {
-  flex: 0.6;
+  flex: 0.8;
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
 }
 .movie_poster img {
-  /* width: 100%; */
   height: 35rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.movie_info_genre {
-  /* margin: 10px 0; */
-}
-
-.movie_info_genre li {
-  border: 2px solid #fff;
-  padding: 5px 10px;
-  border-radius: 50px;
-}
 
 .movie_info_vote {
   display: flex;
   column-gap: 5px;
-}
-
-.movie_info_vote_item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid greenyellow;
-  border-radius: 50%;
-  padding: 5px;
-  height: 3rem;
-  width: 3rem;
 }
 
 .movie_cast_list {

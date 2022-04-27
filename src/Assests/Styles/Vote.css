@@ -1,8 +1,18 @@
+.vote {
+  margin: 10px 0;
+}
 .vote_list {
   display: flex;
-  column-gap: 10px;
+  column-gap: 20px;
+  justify-content: center;
 }
-
+.vote_list_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
 .vote_item {
   display: flex;
   flex-direction: column;

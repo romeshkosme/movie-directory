@@ -1,5 +1,9 @@
 .series__list {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  margin: 20px 0;
 }
 h1 {
   margin: 15px;
@@ -18,10 +22,7 @@ h1 {
   display: flex;
   flex-direction: row;
   column-gap: 2rem;
-  /* justify-content: center; */
   align-items: center;
-  /* overflow-y: hidden;
-  overflow-x: hidden; */
   height: 30rem;
 }
 .series__card {
@@ -57,24 +58,17 @@ h1 {
   text-overflow: ellipsis;
 }
 
-/* single series */
-.single__series {
-    /* padding: 2rem 10rem; */
-}
 .single__series__hero {
   display: flex;
   column-gap: 15px;
   flex-wrap: wrap;
   width: 100%;
 }
-.single__series__hero__image {
-  flex: 0.4;
-}
 .single__series__hero__image img {
   height: 35rem;
 }
 .single__series__hero__content {
-  flex: 0.6;
+  flex: 0.8;
 }
 .single__series__hero__content h1 {
     margin: 0;

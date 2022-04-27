@@ -19,10 +19,11 @@ import "../Assests/Styles/Movie.css";
 import MovieList from "./MovieList";
 import ReviewList from "./ReviewList";
 import CastList from "./CastList";
+import Genres from "./Genres";
+import Vote from "./Vote";
 
 function Movie(props: any) {
   const { movie_id } = useParams();
-  // const [heroCss, setHeroCss] = useState({});
   useEffect(() => {
     props.getMovie(movie_id);
     props.getImages(movie_id);
@@ -37,16 +38,6 @@ function Movie(props: any) {
     };
   }, []);
   useEffect(() => {
-    // setHeroCss({
-    //   backgroundImage: `url(${props.configuration.imageUrl}/${props.configuration.posterSize[6]}/${props.movie.backdrop_path})`,
-    //   backgroundRepeat: "no-repeat",
-    //   backgroundSize: "cover",
-    //   backgroundPosition: "center",
-    //   width: "100%",
-    //   height: "90vh",
-    //   opacity: "0.2",
-    //   position: "absolute",
-    // });
     props.getMovie(movie_id);
     props.getImages(movie_id);
     props.getCredits(movie_id);
@@ -74,22 +65,16 @@ function Movie(props: any) {
               <p>{props.movie.movie.overview}</p>
             </div>
             <div className="movie_info_genre">
-              <ul>
-                {props.movie.movie.genres?.map((genre: any) => (
-                  <li key={genre.id}>{genre.name}</li>
-                ))}
-              </ul>
+              <Genres 
+              genres={props.movie.movie?.genres}
+              />
             </div>
             <div className="movie_info_vote">
-              <div className="movie_info_vote_item movie_info_vote_average">
-                <span>{props.movie.movie.vote_average}</span>
-              </div>
-              <div className="movie_info_vote_item movie_info_vote_count">
-                <span>{Math.round(props.movie.movie.vote_count)}</span>
-              </div>
-              <div className="movie_info_vote_item movie_info_vote_popularity">
-                <span>{Math.round(props.movie.movie.popularity)}</span>
-              </div>
+              <Vote
+                voteAverage={props.movie.movie?.vote_average}
+                voteCount={props.movie.movie?.vote_count}
+                popularity={props.movie.movie?.popularity}
+              />
             </div>
           </div>
         </div>

@@ -1,3 +1,7 @@
+.genres {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 .genres_list {
     display: flex;
     column-gap: 10px;
