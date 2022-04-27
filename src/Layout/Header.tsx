@@ -2,10 +2,8 @@ import React from "react";
 import "../Assests/Styles/Header.css";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
-import Search from "../Pages/Search";
 
-function Header() {
-  const [showSearch, setShowSearch] = React.useState(false);
+function Header(props: any) {
   return (
     <React.Fragment>
       <div className="Header">
@@ -25,14 +23,13 @@ function Header() {
           </li>
           <li
             onClick={(event: React.MouseEvent<HTMLElement>) =>
-              setShowSearch(!showSearch)
+              props.setShowSearch(true)
             }
           >
             <SearchIcon />
           </li>
         </ul>
       </div>
-      {showSearch && <Search closeSearch={setShowSearch} />}
     </React.Fragment>
   );
 }

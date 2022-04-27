@@ -23,7 +23,6 @@ import Vote from "./Vote";
 function SingleSeries(props: any) {
   const { series_id } = useParams();
   useEffect(() => {
-    console.log(series_id)
     props.getSeriesDetails(series_id);
     props.getSeriesCredits(series_id);
     props.getSeriesImages(series_id);
@@ -32,9 +31,6 @@ function SingleSeries(props: any) {
     props.getSeriesVideos(series_id);
     props.getSeriesSimilar(series_id);
   }, []);
-  // useEffect(() => {
-  //   console.log("SingleSeries", props.series);
-  // }, [props.series]);
   return (
     <div className="single__series">
       <div className="single__series__hero">
@@ -52,20 +48,20 @@ function SingleSeries(props: any) {
             {props.series.details?.overview}
           </p>
           <div className="single__series__hero__content__genres">
-            <Genres genres={props.series.details.genres} />
+            <Genres genres={props.series.details?.genres} />
           </div>
           <div className="single__series__hero__content__vote">
             <Vote
-              voteAverage={props.series.details.vote_average}
-              voteCount={props.series.details.vote_count}
-              popularity={props.series.details.popularity}
+              voteAverage={props.series.details?.vote_average}
+              voteCount={props.series.details?.vote_count}
+              popularity={props.series.details?.popularity}
             />
           </div>
         </div>
       </div>
       <div className="single__series__content">
         <div className="single__series__content__cast">
-          <CastList title="Cast" casts={props.series.credits.cast} />
+          <CastList title="Cast" casts={props.series.credits?.cast} />
           {/* <CastList title="Similar" list={props.series.similar} /> */}
         </div>
         <div className="single__series__content__reviews">

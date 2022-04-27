@@ -16,6 +16,7 @@ function ReviewList(props: any) {
               <div
                 className="review_list_content_more"
                 onClick={() => setReviewLimit(reviewLimit + 7)}
+                key={0}
               >
                 <h3>More</h3>
               </div>

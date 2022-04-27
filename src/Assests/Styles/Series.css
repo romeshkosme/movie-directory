@@ -59,7 +59,7 @@ h1 {
 
 /* single series */
 .single__series {
-    padding: 2rem 10rem;
+    /* padding: 2rem 10rem; */
 }
 .single__series__hero {
   display: flex;

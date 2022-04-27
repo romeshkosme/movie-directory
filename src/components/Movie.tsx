@@ -33,7 +33,6 @@ function Movie(props: any) {
     props.getVideos(movie_id);
     props.getWatchProviders(movie_id);
     return () => {
-      console.log("reset");
       props.reset();
     };
   }, []);
@@ -97,7 +96,7 @@ function Movie(props: any) {
       </div>
       <div className="movie_content">
         <div className="movie_cast">
-          <CastList casts={props.credits.cast} />
+          <CastList casts={props.movie.cast} />
         </div>
         <div className="movie_review">
           <ReviewList reviews={props.movie.reviews} />

@@ -27,7 +27,7 @@ export default function searchReducer(state = initialState, action: any) {
     case MULTI_SEARCH:
       return {
         ...state,
-        multiSearch: action.payload,
+        multiSearch: [],
       };
     case MULTI_SEARCH_SUCCESS:
       return {

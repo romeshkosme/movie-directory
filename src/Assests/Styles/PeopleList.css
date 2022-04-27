@@ -1,18 +1,18 @@
+.people__list__header {
+    margin-bottom: 15px;
+}
 .people__list__item {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
     min-width: 180px;
     height: 240px;
     background-color: #fff;
     transition: all 0.2s ease-in-out;
+    border-radius: 8px;
 }
 .people__list__item-bg {
     width: 100%;
     height: 100%;
-    padding: 8px;
-    /* background-image: linear-gradient(rgba(255, 0, 0, 0), black); */
+    background-image: linear-gradient(rgba(255, 0, 0, 0), black);
     border-radius: 8px;
     display: flex;
     align-items: flex-end;

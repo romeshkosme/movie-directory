@@ -11,19 +11,21 @@ function PeopleList(props: any) {
     setContent(
       props.list?.map((item: any, index: number) => {
         return (
-          <Link to={`/person/${item.id}`}>
-            <div
-              key={index}
-              className="people__list__item"
-              style={{
-                backgroundImage: `url(${props.configuration.imageUrl}/${props.configuration.posterSize[2]}/${item.profile_path})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                borderRadius: "8px",
-              }}
-            >
-              <div className="people__list__item-bg">
-                <div className="people__list__item__name">{item.name}</div>
+          <Link to={`/person/${item.id}`} key={item.id}>
+            <div key={item.id} className="people__list__item">
+              <div
+                className="people__list__item__content"
+                style={{
+                  backgroundImage: `url(${props.configuration?.imageUrl}/${props.configuration?.posterSize[2]}/${item.profile_path})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                  borderRadius: "8px",
+                  width: "100%",
+                }}
+              >
+                <div className="people__list__item-bg">
+                  <div className="people__list__item__name">{item.name}</div>
+                </div>
               </div>
             </div>
           </Link>

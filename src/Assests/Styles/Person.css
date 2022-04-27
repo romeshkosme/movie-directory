@@ -1,7 +1,7 @@
 .person {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
 }
 .person__hero {
   display: flex;
@@ -19,37 +19,52 @@
   margin: 0;
   padding: 0;
 }
-.person__movie__credits, .person__tv__credits {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
+.person__movie__credits,
+.person__tv__credits {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
 }
-.person__movie__credits__list, .person__tv__credits__list {
+.person__movie__credits__list,
+.person__tv__credits__list {
   display: flex;
   flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 8px;
 }
-.person__movie__credits__list__item, .person__tv__credits__list__item {
+.person__movie__credits__list__item,
+.person__tv__credits__list__item {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 300px;
-  column-gap: 8px;
-}
-.person__movie__credits__list__item__image img, .person__tv__credits__list__item__image img {
   height: 100px;
+  column-gap: 8px;
+  row-gap: 8px;
+  background-color: #1a2028;
+  border-radius: 8px;
 }
-.person__movie__credits__list__item__heading, .person__tv__credits__list__item__heading {
-    display: flex;
-    column-gap: 5px;
+.person__movie__credits__list__item__image img,
+.person__tv__credits__list__item__image img {
+  height: 100px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
-.person__movie__credits__list__item__heading span, .person__tv__credits__list__item__heading span {
+.person__movie__credits__list__item__heading,
+.person__tv__credits__list__item__heading {
+  display: flex;
+  column-gap: 5px;
+}
+.person__movie__credits__list__item__heading span,
+.person__tv__credits__list__item__heading span {
   background-color: #fff;
   padding-left: 5px;
   padding-right: 5px;
   border-radius: 50px;
-  cursor: default;
   max-height: 22px;
 }
-.person__movie__credits__list__item__heading small, .person__tv__credits__list__item__heading small {
-    color: black;
+.person__movie__credits__list__item__heading small,
+.person__tv__credits__list__item__heading small {
+  color: black;
 }

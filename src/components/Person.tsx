@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../Assests/Styles/Person.css";
 import {
-  // Link,
+  Link,
   useParams,
 } from "react-router-dom";
 import { connect } from "react-redux";
@@ -45,6 +45,7 @@ function Person(props: any) {
         <h2>Movie Credits</h2>
         <div className="person__movie__credits__list">
           {props.people.movieCredits?.cast.map((movie: any) => (
+            <Link to={`/movie/${movie.id}`} key={movie.id}>
             <div className="person__movie__credits__list__item" key={movie.id}>
               <div className="person__movie__credits__list__item__image">
                 <img
@@ -62,6 +63,7 @@ function Person(props: any) {
                 <p>as {movie.character}</p>
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -69,6 +71,7 @@ function Person(props: any) {
         <h2>TV Credits</h2>
         <div className="person__tv__credits__list">
           {props.people.tvCredits?.cast.map((tv: any) => (
+            <Link to={`/series/${tv.id}`} key={tv.id}>
             <div className="person__tv__credits__list__item" key={tv.id}>
               <div className="person__tv__credits__list__item__image">
                 <img
@@ -86,6 +89,7 @@ function Person(props: any) {
                 <p>as {tv.character}</p>
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </div>
