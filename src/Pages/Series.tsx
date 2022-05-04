@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import "../Assests/Styles/Series.css";
 import SeriesList from "../components/SeriesList";
 import { connect } from "react-redux";
@@ -26,4 +26,4 @@ const mapStateToProps = (state: any) => ({
 export default connect(mapStateToProps, {
   getPopularSeries,
   getTopRatedSeries,
-})(Series);
+})(memo(Series));

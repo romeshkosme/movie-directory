@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 import "../Assests/Styles/Movies.css";
 import { connect } from "react-redux";
 import { getPopularMovie, getTopRatedMovie } from "../store/movie/movieAction";
@@ -21,5 +21,5 @@ const mapStateToProps = (state: any) => ({
   movie: state.movie,
 });
 export default connect(mapStateToProps, { getPopularMovie, getTopRatedMovie })(
-  Movies
+  memo(Movies)
 );

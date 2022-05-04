@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import "../Assests/Styles/Series.css";
 import { connect } from "react-redux";
 import Card from "./Card";
@@ -42,4 +42,4 @@ const mapStateToProps = (state: any) => ({
   imgUrl: state.configuration.imageUrl,
   posterSize: state.configuration.posterSize,
 });
-export default connect(mapStateToProps, {})(SeriesList);
+export default connect(mapStateToProps, {})(memo(SeriesList));

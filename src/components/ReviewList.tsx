@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import ReviewCard from "./ReviewCard";
 import "../Assests/Styles/Review.css";
 
@@ -38,4 +38,4 @@ function ReviewList(props: any) {
   );
 }
 
-export default ReviewList;
+export default memo(ReviewList);

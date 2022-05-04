@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { memo } from "react";
 import "../Assests/Styles/Search.css";
 import CloseIcon from "@mui/icons-material/Close";
 import { connect } from "react-redux";
@@ -114,4 +114,4 @@ const mapStateToProps = (state: any) => ({
   search: state.search,
   configuration: state.configuration,
 });
-export default connect(mapStateToProps, { multiSearch })(Search);
+export default connect(mapStateToProps, { multiSearch })(memo(Search));

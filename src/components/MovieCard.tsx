@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import "../Assests/Styles/MovieCard.css";
 import {connect} from "react-redux";
 import { Link } from 'react-router-dom';
@@ -48,4 +48,4 @@ const mapStateToProps = (state: any) => {
     posterSize: state.configuration.posterSize,
   };
 }
-export default connect(mapStateToProps, null)(MovieCard);
+export default connect(mapStateToProps, null)(memo(MovieCard));

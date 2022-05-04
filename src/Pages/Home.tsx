@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, memo } from "react";
 import "../Assests/Styles/Home.css";
 import { connect } from "react-redux";
 import { getPopularMovie, getTopRatedMovie } from "../store/movie/movieAction";
@@ -38,4 +38,4 @@ export default connect(mapStateToProps, {
   getTopRatedMovie,
   getPopularSeries,
   getTopRatedSeries,
-})(Home);
+})(memo(Home));

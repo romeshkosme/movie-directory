@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import "../Assests/Styles/Series.css";
 import { connect } from "react-redux";
 import {
@@ -88,4 +88,4 @@ export default connect(mapStateToProps, {
   getSeriesReviews,
   getSeriesSimilar,
   getSeriesVideos,
-})(SingleSeries);
+})(memo(SingleSeries));

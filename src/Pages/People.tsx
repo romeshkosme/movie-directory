@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import "../Assests/Styles/People.css";
 import { connect } from "react-redux";
 import { getPopularPeople } from "../store/people/peopleAction";
@@ -26,4 +26,4 @@ const mapStateToProps = (state: any) => ({
   people: state.people,
   configuration: state.configuration,
 });
-export default connect(mapStateToProps, { getPopularPeople })(People);
+export default connect(mapStateToProps, { getPopularPeople })(memo(People));

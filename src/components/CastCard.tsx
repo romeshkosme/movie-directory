@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import avatar from "../Assests/Static/avatar.jpg";
 
@@ -24,4 +24,4 @@ function CastCard(props: any) {
   );
 }
 
-export default CastCard;
+export default memo(CastCard);
