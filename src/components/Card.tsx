@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import "../Assests/Styles/Card.css";
 
@@ -28,4 +28,4 @@ function Card(props: any) {
   );
 }
 
-export default Card;
+export default memo(Card);

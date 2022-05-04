@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "../Assests/Styles/Vote.css";
 function Vote(props: any) {
   return (
@@ -18,4 +18,4 @@ function Vote(props: any) {
   );
 }
 
-export default Vote;
+export default memo(Vote);

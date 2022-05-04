@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { memo, useState } from "react";
 import CastCard from "./CastCard";
 import { connect } from "react-redux";
 import "../Assests/Styles/CastList.css";
@@ -39,4 +39,4 @@ const mapStateToProps = (state: any) => {
     configuration: state.configuration,
   };
 };
-export default connect(mapStateToProps, {})(CastList);
+export default connect(mapStateToProps, {})(memo(CastList));

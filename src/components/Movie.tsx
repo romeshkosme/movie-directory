@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { memo, useEffect, useMemo } from "react";
 import { connect } from "react-redux";
 import {
   getMovie,
@@ -56,6 +56,22 @@ function Movie(props: any) {
     props.getVideos(movie_id);
     props.getWatchProviders(movie_id);
   }, [movie_id]);
+  const CAST_LIST = useMemo(
+    () => <CastList casts={props.movie.cast} />,
+    [props.movie.cast]
+  );
+  const RECOMMENDATION_LIST = useMemo(
+    () => <MovieList title="Recommended" list={props.movie.recommendations} />,
+    [props.movie.recommendations]
+  );
+  const SIMILAR_LIST = useMemo(
+    () => <MovieList title="Similar" list={props.movie.similarMovies} />,
+    [props.movie.similarMovies]
+  );
+  const REVIEW_LIST = useMemo(
+    () => <ReviewList reviews={props.movie.reviews} />,
+    [props.movie.reviews]
+  );
   return (
     <div className="movie">
       <div className="movie_hero">
@@ -96,16 +112,20 @@ function Movie(props: any) {
       </div>
       <div className="movie_content">
         <div className="movie_cast">
-          <CastList casts={props.movie.cast} />
+          {/* <CastList casts={props.movie.cast} /> */}
+          {CAST_LIST}
         </div>
         <div className="movie_review">
-          <ReviewList reviews={props.movie.reviews} />
+          {/* <ReviewList reviews={props.movie.reviews} /> */}
+          {REVIEW_LIST}
         </div>
         <div className="movie_recommendations">
-          <MovieList title="Recommended" list={props.movie.recommendations} />
+          {/* <MovieList title="Recommended" list={props.movie.recommendations} /> */}
+          {RECOMMENDATION_LIST}
         </div>
         <div className="movie_similar">
-          <MovieList title="Similar" list={props.movie.similarMovies} />
+          {/* <MovieList title="Similar" list={props.movie.similarMovies} /> */}
+          {SIMILAR_LIST}
         </div>
       </div>
     </div>
@@ -129,4 +149,4 @@ export default connect(mapStateToProps, {
   getVideos,
   getWatchProviders,
   reset,
-})(Movie);
+})(memo(Movie));

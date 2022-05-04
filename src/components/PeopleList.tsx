@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import ScrollList from "./ScrollList";
 import "../Assests/Styles/PeopleList.css";
 import { Link } from "react-router-dom";
@@ -45,4 +45,4 @@ function PeopleList(props: any) {
   );
 }
 
-export default PeopleList;
+export default memo(PeopleList);

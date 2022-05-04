@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { connect } from "react-redux";
 import "../Assests/Styles/Review.css";
 
@@ -24,4 +24,4 @@ const mapStateToProps = (state: any) => {
     configuration: state.configuration,
   };
 };
-export default connect(mapStateToProps, {})(ReviewCard);
+export default connect(mapStateToProps, {})(memo(ReviewCard));

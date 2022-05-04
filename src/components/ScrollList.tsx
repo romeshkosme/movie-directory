@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, memo } from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "../Assests/Styles/ScrollList.css";
@@ -63,4 +63,4 @@ function ScrollList(props: any) {
   );
 }
 
-export default ScrollList;
+export default memo(ScrollList);

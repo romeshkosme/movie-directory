@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import "../Assests/Styles/Genres.css";
 
 function Genres(props: any) {
@@ -17,4 +17,4 @@ function Genres(props: any) {
   );
 }
 
-export default Genres;
+export default memo(Genres);

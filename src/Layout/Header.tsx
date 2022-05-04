@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "../Assests/Styles/Header.css";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
@@ -34,4 +34,4 @@ function Header(props: any) {
   );
 }
 
-export default Header;
+export default memo(Header);

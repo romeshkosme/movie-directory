@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import "../Assests/Styles/List.css";
 import { connect } from "react-redux";
 import Card from "./Card";
@@ -8,7 +8,7 @@ function MovieList(props: any): any {
   const [content, setContent] = React.useState();
   const [listLen, setListLen] = React.useState(0);
   useEffect(() => {
-    setListLen(props.list.length);
+    setListLen(props.list?.length);
     setContent(
       props.list?.map((item: any) => (
         <Card
@@ -26,7 +26,7 @@ function MovieList(props: any): any {
         />
       ))
     );
-  }, [props.list]);
+  }, [props.list, props.imgUrl, props.posterSize]);
   return (
     <div className="List">
       <div className="List__header">
@@ -43,4 +43,4 @@ const mapStateToProps = (state: any) => ({
   imgUrl: state.configuration.imageUrl,
   posterSize: state.configuration.posterSize,
 });
-export default connect(mapStateToProps, {})(MovieList);
+export default connect(mapStateToProps, {})(memo(MovieList));
